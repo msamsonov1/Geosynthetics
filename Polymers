@@ -1,0 +1,28 @@
+# Input parameters
+soil_type = input("Enter the type of soil: ")
+design_life = int(input("Enter the desired design life in years: "))
+installation_method = input("Enter the installation method (e.g. exposed, buried): ")
+
+# Geosynthetic polymer selection
+if soil_type == "clay":
+    if design_life >= 50:
+        if installation_method == "exposed":
+            polymer = "LLDPE"
+        elif installation_method == "buried":
+            polymer = "HDPE"
+    else:
+        polymer = "PP"
+elif soil_type == "sandy":
+    if design_life >= 50:
+        if installation_method == "exposed":
+            polymer = "PVC"
+        elif installation_method == "buried":
+            polymer = "HDPE"
+    else:
+        polymer = "PP"
+else:
+    polymer = "EPS"
+
+# Output result
+print(f"The recommended geosynthetic polymer for the given conditions is: {polymer}")
+#high density polyethylene HDPE, polypropylene PP, linear low-density polyethylene LLDPE, polyvinyl chloride PVC, expanded polystyrene EPS
